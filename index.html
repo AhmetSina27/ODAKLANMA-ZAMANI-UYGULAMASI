@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Yayın adresine göre `flutter build web --base-href` ile değiştirilir. -->
+  <base href="/ODAKLANMA-ZAMANI-UYGULAMASI/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odaklanma Zamanı · Ahmet Sina Kurt</title>
+  <meta name="description" content="Odaklanma Zamanı: çevirmeli saat, hareketli sahneler ve sakin seslerle odaklan. Her oturumun sonunda bir tebrik ve ilham veren bir söz.">
+  <meta name="author" content="Ahmet Sina Kurt">
+  <meta name="theme-color" content="#151A33">
+
+  <!-- Bağlantı paylaşıldığında görünen önizleme (WhatsApp, Instagram, X, iMessage...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Odaklanma Zamanı">
+  <meta property="og:title" content="Odaklanma Zamanı · Zamanı çevir, odağını bul.">
+  <meta property="og:description" content="Çevirmeli saat, hareketli sahneler ve sakin seslerle odaklan. Geliştirici: Ahmet Sina Kurt">
+  <meta property="og:image" content="https://ahmetsina27.github.io/ODAKLANMA-ZAMANI-UYGULAMASI/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://ahmetsina27.github.io/ODAKLANMA-ZAMANI-UYGULAMASI/">
+  <meta property="og:locale" content="tr_TR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Odaklanma Zamanı">
+  <meta name="twitter:description" content="Çevirmeli saat, hareketli sahneler ve sakin seslerle odaklan.">
+  <meta name="twitter:image" content="https://ahmetsina27.github.io/ODAKLANMA-ZAMANI-UYGULAMASI/og.png">
+
+  <!-- Ana ekrana eklenince uygulama gibi açılsın -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Odaklanma Zamanı">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { height: 100%; margin: 0; background: #151A33; }
+    #acilis { position: fixed; inset: 0; display: grid; place-content: center; gap: 14px; text-align: center;
+      color: #F3F2EF; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(120% 80% at 50% 110%, #5a2a36 0%, #151A33 60%); transition: opacity .4s; }
+    #acilis img { width: 112px; height: 112px; border-radius: 26px; margin: 0 auto; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+    #acilis .ad { font-size: 26px; font-weight: 700; letter-spacing: .01em; }
+    #acilis .ad b { color: #F0664C; font-weight: 700; }
+    #acilis .gelistirici { font-size: 14px; opacity: .7; }
+    #acilis .yukleniyor { margin: 18px auto 0; width: 140px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.15); overflow: hidden; }
+    #acilis .yukleniyor::after { content: ""; display: block; height: 100%; width: 40%; border-radius: 2px; background: #F0664C;
+      animation: kay 1.1s ease-in-out infinite; }
+    @keyframes kay { from { transform: translateX(-100%); } to { transform: translateX(350%); } }
+    @media (prefers-reduced-motion: reduce) { #acilis .yukleniyor::after { animation: none; width: 100%; } }
+  </style>
+</head>
+<body>
+  <div id="acilis" role="status" aria-label="Odaklanma Zamanı yükleniyor">
+    <img src="icons/Icon-512.png" alt="Odaklanma Zamanı logosu">
+    <div class="ad">Odaklanma <b>Zamanı</b></div>
+    <div class="gelistirici">Ahmet Sina Kurt</div>
+    <div class="yukleniyor"></div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('acilis');
+      if (el) { el.style.opacity = '0'; setTimeout(function () { el.remove(); }, 400); }
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
